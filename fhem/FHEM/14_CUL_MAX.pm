@@ -246,7 +246,7 @@ sub CUL_MAX_Define
    return $ret;
   }
 
-  if (exists($modules{CUL_MAX}{defptr}) && ($modules{CUL_MAX}{defptr}{$MAXid}->{NAME} ne $name)) 
+  if (exists($modules{CUL_MAX}{defptr}) && exists($modules{CUL_MAX}{defptr}{$MAXid}) && ($modules{CUL_MAX}{defptr}{$MAXid}->{NAME} ne $name))
   {
     $ret = "a CUL_MAX device with address $MAXid is already defined !";
     Log3 $name, 1, $ret;
